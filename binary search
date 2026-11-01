@@ -1,0 +1,59 @@
+class Solution {
+  public:
+  bool canplacecows(vector<int>&arr,int n,int k, int guess){
+      int count=1;
+      int last_pos=arr[0];
+      for(int i =1;i<n;i++){
+          if (arr[i] - last_pos >= guess) {
+              count++;
+              last_pos=arr[i];
+
+      }
+          
+  }   
+  
+  
+        if(count>=k){
+            return true;
+        }
+        
+        return false ;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    int aggressiveCows(vector<int> &arr, int k) {
+        sort(arr.begin(),arr.end());
+        
+        // code here
+        
+        int low=1,n=arr.size(),high=arr[n-1],res=-1;
+        
+        while(low<=high){
+            int guess=(low+high)/2;
+            if(canplacecows(arr,  n,  k, guess)){
+                res=guess;
+                low=guess+1;
+            }
+            else{
+                high=guess-1;
+            }
+        }
+        return res;
+        
+    }
+};
