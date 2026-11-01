@@ -1,0 +1,16 @@
+int arr[] = {2, 5, 15, 8};
+
+bool teller = false;
+
+for (int i = 0; i < 4; i++) {
+    if (arr[i] > 10) {
+        teller = true;
+    }
+}
+
+if (teller) {
+    cout << "Found";
+}
+else {
+    cout << "Not Found";
+}
