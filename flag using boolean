@@ -5,11 +5,13 @@ bool teller = false;
 for (int i = 0; i < 4; i++) {
     if (arr[i] > 10) {
         teller = true;
+      res=arr[i];
     }
 }
 
 if (teller) {
     cout << "Found";
+println(res);
 }
 else {
     cout << "Not Found";
